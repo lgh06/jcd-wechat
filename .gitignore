@@ -1,0 +1,29 @@
+#compressed files
+*.rar
+*.7z
+*.zip
+*.jar
+*.war
+*.ear
+*.gz
+
+#屏幕录像专家文件
+*.lxe
+*.exe
+
+
+
+#源代码相关文件
+
+ac.php
+log.xml
+
+#backup files
+.bak
+
+
+#directories
+server_file_backup/
+server_db_backup/
+others/
+t.php

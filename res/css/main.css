@@ -1,0 +1,36 @@
+@charset "utf-8"
+/* 自定义全局CSS 待添加 */
+@media (min-width: 768px) {
+		body{
+        
+        }
+	}
+#leftnav{	
+	width:15%;
+	position:fixed;
+	}
+.right_frame{
+	float:right;
+	width:80%;
+	height:100%;
+	}
+iframe{
+	border:none;
+	border-style:none;
+	height:110%;
+	width:100%;
+	overflow:hidden;
+	border-top-style: none;
+	border-top-width: 0px;
+	border-right-style: none;
+	border-right-width: 0px;
+	border-bottom-style: none;
+	border-bottom-width: 0px;
+	border-left-style: none;
+	border-left-width: 0px;
+	}
+#content{
+	height:35em;
+	width:96%;
+	}
+	
