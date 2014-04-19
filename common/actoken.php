@@ -1,17 +1,19 @@
 <?php
 function returnAccessToken()
 {
+	@$c = file_get_contents('ac.php');
 
-	if(	!file_exists('ac.php') || (time()-filemtime('ac.php')>7100))
+	if(	!file_exists('ac.php') || (time()-filemtime('ac.php')>7100)||empty($c))
 		{
+			
 			$temp = getAccessToken();
 			file_put_contents('ac.php',$temp);//用ac.php文件内的字符串做缓存
 			clearstatcache();
-
+			return trim($temp);
 		}
 		
-	$ac = trim(file_get_contents('ac.php'));
-	return $ac;
+	
+	return trim($c);
 }
 
 function getAccessToken()

@@ -72,7 +72,8 @@ class db_mysql {
 	
 	public function selectSQL($sql){
 		$query = mysql_query($sql, $this->wlink);
-		if($query==false) return false;
+		if($query==false) return false; //执行查询语句或插入语句，失败返回false
+		if($query==true) return true;//执行插入语句 成功则返回true
 		return mysql_fetch_array($query);
 	
 	}
@@ -104,6 +105,23 @@ class db_mysql {
 			mysql_close($this->wlink);
 		}
 		
+	}
+	
+	function split_sql($sql) {
+	$sql = str_replace("\r", '', $sql);
+	$ret = array();
+	$num = 0;
+	$queriesarray = explode(";\n", trim($sql));
+	unset($sql);
+	foreach($queriesarray as $query) {
+		$ret[$num] = isset($ret[$num]) ? $ret[$num] : '';
+		$queries = explode("\n", trim($query));
+		foreach($queries as $query) {
+			$ret[$num] .= isset($query[0]) && $query[0] == "#" ? '' : trim(preg_replace('/\#.*/', '', $query));
+		}
+		$num++;
+	}
+	return $ret;
 	}
 
 }

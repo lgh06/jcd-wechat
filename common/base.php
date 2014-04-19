@@ -1,6 +1,8 @@
 <?php
 require_once dirname(__FILE__).'/actoken.php';
 require_once dirname(__FILE__).'/db/db_mysql.class.php';
+
+
 define("TOKEN", "If985hike");
 define("APPID", "wxe9828da2665d3b63");
 define("APPSECRET","9098f1847820f42fd59b0d083761d4b1");
@@ -11,7 +13,7 @@ class wechatCallbackapiTest
     //验证消息
     public function valid()
     {
-        $echoStr = $_GET["echostr"];
+        @$echoStr = $_GET["echostr"];
         if($this->checkSignature()){
             echo $echoStr;
             exit;
@@ -21,9 +23,9 @@ class wechatCallbackapiTest
     //检查签名
     private function checkSignature()
     {
-        $signature = $_REQUEST["signature"];
-        $timestamp = $_REQUEST["timestamp"];
-        $nonce = $_REQUEST["nonce"];
+        @$signature = $_REQUEST["signature"];
+        @$timestamp = $_REQUEST["timestamp"];
+        @$nonce = $_REQUEST["nonce"];
         $token = TOKEN;
         $tmpArr = array($token, $timestamp, $nonce);
         sort($tmpArr, SORT_STRING);
@@ -40,7 +42,7 @@ class wechatCallbackapiTest
     //响应消息
     public function responseMsg()
     {
-        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+        @$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         if (!empty($postStr)){
             $this->logger("R ".$postStr);
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
@@ -179,7 +181,7 @@ class wechatCallbackapiTest
                 break;
 			default:{
                 $dbc = new db_mysql($GLOBALS['db_conf']);
-				$re = $dbc->selectSQL("select content from wx_reply where id={$object->Content};");
+				$re = $dbc->selectSQL("select content from wx_reply where id={$object->Content}");
 				if($re!=false){
 				$content = $re[0];
 				}

@@ -1,8 +1,10 @@
 <?php
-	header('Content-Type:text/html;charset=utf-8');
-	@$upfile=$_REQUEST["upfile"];
+header('Content-Type:text/html;charset=utf-8');
 	$parentdir = dirname(dirname(__FILE__));
 	define("UPLOADDIR",$parentdir.'/upload');//最前最后都不带斜杠
+	@require_once $parentdir.'/common/db/db_mysql.class.php';
+	@$upfile=$_REQUEST["upfile"];
+	
 	
 	
 	
