@@ -5,8 +5,7 @@
  * Author: wuzhaohuan <kongphp@gmail.com>
  */
 
-//defined('KONG_PATH') || exit;
-require_once 'db_config.php';
+require_once dirname(__FILE__).'/db_config.php';
 
 class db_mysql {
 	private $conf;

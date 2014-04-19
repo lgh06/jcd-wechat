@@ -1,26 +1,17 @@
 <?php
-/*
-    欢欢工作室
-    CopyRight 2014 All Rights Reserved
-*/
-require_once  'actoken.php';
-require_once '/db/db_mysql.class.php';
-
+require_once dirname(__FILE__).'/actoken.php';
+require_once dirname(__FILE__).'/db/db_mysql.class.php';
 define("TOKEN", "If985hike");
 define("APPID", "wxe9828da2665d3b63");
 define("APPSECRET","9098f1847820f42fd59b0d083761d4b1");
 define("ACCESS_TOKEN",returnAccessToken());
-
-
-
-
 
 class wechatCallbackapiTest
 {
     //验证消息
     public function valid()
     {
-        $echoStr = $_GET['echostr'];
+        $echoStr = $_GET["echostr"];
         if($this->checkSignature()){
             echo $echoStr;
             exit;
@@ -30,9 +21,9 @@ class wechatCallbackapiTest
     //检查签名
     private function checkSignature()
     {
-        $signature = $_GET['signature'];
-        $timestamp = $_GET['timestamp'];
-        $nonce = $_GET["nonce"];
+        $signature = $_REQUEST["signature"];
+        $timestamp = $_REQUEST["timestamp"];
+        $nonce = $_REQUEST["nonce"];
         $token = TOKEN;
         $tmpArr = array($token, $timestamp, $nonce);
         sort($tmpArr, SORT_STRING);
@@ -49,7 +40,7 @@ class wechatCallbackapiTest
     //响应消息
     public function responseMsg()
     {
-        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];//==null?null:$GLOBALS["HTTP_RAW_POST_DATA"];
+        $postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
         if (!empty($postStr)){
             $this->logger("R ".$postStr);
             $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
@@ -102,7 +93,7 @@ class wechatCallbackapiTest
 				."2.亲亲我\n"
 				."3.抱抱我\n"
 				."4.亲亲我\n"
-				."<a href=\"http://passby.me\"";
+				."<a href=\"http://passby.me\">过客小站</a>";
                 $content .= (!empty($object->EventKey))?("\n来自二维码场景 ".str_replace("qrscene_","",$object->EventKey)):"";
                 break;
             case "unsubscribe":
@@ -192,7 +183,7 @@ class wechatCallbackapiTest
 				if($re!=false){
 				$content = $re[0];
 				}
-				if($re==false){				
+				if($re==false){
 				$content="您的意见已记录。我们会尽快回复。谢谢。";
 				//TODO 存入数据库
 				}

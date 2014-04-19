@@ -1,7 +1,8 @@
 <?php
-//自定义菜单 JSON https curl post解决方案页
-require_once  './common/base.php';
 header('Content-type:text/html;charset=utf-8');
+//自定义菜单 JSON https curl post解决方案页
+require_once dirname(__FILE__).'/common/base.php';
+
 
 $jsonmenu = '{
       "button":[

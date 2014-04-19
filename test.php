@@ -1,13 +1,8 @@
 <?php
-
-
-require_once  './common/base.php';
-
-
-
+require_once dirname(__FILE__).'/common/base.php';
 $wechatObj = new wechatCallbackapiTest();
-if(isset($_GET['echostr'])) {
-    $wechatObj->valid();
+if(!isset($_GET["echostr"])) {
+	$wechatObj->responseMsg();   
 }else{
-    $wechatObj->responseMsg();
+	$wechatObj->valid();
 }
