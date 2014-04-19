@@ -26,4 +26,6 @@ log.xml
 server_file_backup/
 server_db_backup/
 others/
+#图片上传目录
+upload/
 t.php
