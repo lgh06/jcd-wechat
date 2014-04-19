@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* 自定义全局CSS 待添加 */
+html{
+width: 100%;
+height: 100%;
+}
+body{
+width: 100%;
+height: 100%;
+border:0 none;
+margin:0;
+padding:0;
+}
+
+div{
+border:0 none;
+margin:0;
+padding:0;
+
+}
+
+.container{
+width:100%;
+/*width:480px;*/
+height:100%;
+/*margin:0 auto;*/
+text-align:center;
+font-family:微软雅黑;
+
+}
+.header{
+width:100%;
+height:5em;
+/*background-color: red;*/
+}
+.logo{
+width: 30%;
+height: 100%;
+float:left;
+//background-color: yellow;
+//background-image: url(http://www.jinchidai.com/themes/soonmes/images/logo.png);
+}
+.tip{
+width:70%;
+height: 100%;
+float:left;
+background-color: blue;
+}
+
+.main{
+min-height:50%;
+width:100%;
+
+
+}
+.img{
+height: 10em;
+/*float: left;*/
+width: 100%;
+background-color: green;
+}
+.article{
+min-height:30em;
+/*float: left;
+width: 100%;*/
+background-color: #856;
+}
+
+.footer{
+width: 100%;
+height: 5em;
+background-color: grey;
+/* position:absolute;
+bottom:0px; */
+
+}
+	
