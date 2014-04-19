@@ -72,8 +72,8 @@ class db_mysql {
 	
 	public function selectSQL($sql){
 		$query = mysql_query($sql, $this->wlink);
-		if($query==false) return false; //执行查询语句或插入语句，失败返回false
-		if($query==true) return true;//执行插入语句 成功则返回true
+		if($query==false) {return false;} //执行查询语句或插入语句，失败返回false
+		//if($query==true) {return true;}//执行插入语句 成功则返回true
 		return mysql_fetch_array($query);
 	
 	}
