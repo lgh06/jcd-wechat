@@ -123,5 +123,23 @@ class db_mysql {
 	}
 	return $ret;
 	}
+	
+	//根据传入的图文多个id，生成关联数组并返回
+	public function getManyNews($newsids){
+	
+		
+		$r = mysql_query('select * from news_reply where id in ('.$newsids.')',$this->wlink);
+		if($r==false) {return false;}
+		$count = 0;
+
+		while($c[] = mysql_fetch_assoc($r)){
+		$count+=1;
+		}
+
+		unset($c[$count]);//去除最后一个空元素
+		
+		return $c;
+	
+	}
 
 }

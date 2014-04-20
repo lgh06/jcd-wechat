@@ -135,6 +135,7 @@ class wechatCallbackapiTest
     //接收文本消息
     private function receiveText($object)
     {
+		
         switch ($object->Content)
         {
 			case "文本":
@@ -180,12 +181,18 @@ class wechatCallbackapiTest
 				);
                 break;
 			default:{
-                $dbc = new db_mysql($GLOBALS['db_conf']);
-				$re = $dbc->selectSQL("select content from wx_reply where id={$object->Content}");
-				if($re!=false){
-				$content = $re[0];
+			
+				$dbc = new db_mysql($GLOBALS['db_conf']);
+				$content="";
+                
+				$re = $dbc->selectSQL("select content,newsids from wx_reply where id={$object->Content}");
+				if($re!=false){				
+					if(empty($re['content'])&&!empty($re['newsids'])){
+					$content = $dbc->getManyNews($re['newsids']);
+					}				
+					if(!empty($re['content'])) {$content = $re['content'];}
 				}
-				if($re==false){
+				if(empty($content)){
 				$content="您的意见已记录。我们会尽快回复。谢谢。";
 				//TODO 存入数据库
 				}
