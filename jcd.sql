@@ -26,7 +26,7 @@ CREATE TABLE `news_reply` (
   `PicUrl` varchar(255) DEFAULT NULL,
   `Url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news_reply
