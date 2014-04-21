@@ -90,12 +90,11 @@ class wechatCallbackapiTest
         switch ($object->Event)
         {
             case "subscribe":
-                $content = "欢迎关注公牛建站\n请输入数字来了解详情：\n"
-				."1.了解我\n"
-				."2.亲亲我\n"
-				."3.抱抱我\n"
-				."4.亲亲我\n"
-				."<a href=\"http://passby.me\">过客小站</a>";
+                $content = "金池贷欢迎您的关注！\n请输入数字来了解详情：\n"
+				."1.关于我们\n"
+				."2.了解P2P互联网金融\n"
+				."3.其它信息，请浏览电脑版网站\n"
+				."<a href=\"http://www.jinchidai.com\">jinchidai.com</a>";
                 $content .= (!empty($object->EventKey))?("\n来自二维码场景 ".str_replace("qrscene_","",$object->EventKey)):"";
                 break;
             case "unsubscribe":

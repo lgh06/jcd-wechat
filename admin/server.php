@@ -50,6 +50,11 @@ header('Content-Type:text/html;charset=utf-8');
 	*/
 	if(is_uploaded_file($source)){
 		if(move_uploaded_file($source, $dest)){
+		
+			//TODO 把文件名存入数据库。建立图片和URL的对应关系。
+			//TODO 建立已上传的图片显示页，显示已上传图片的URL。
+			//TODO 建立删除图片的机制。
+		
 			echo '<script type="text/javascript">alert("上传成功")</script>';
 		}else{
 			echo '<script type="text/javascript">alert("上传失败!")</script>';
