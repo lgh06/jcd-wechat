@@ -3,9 +3,9 @@ require_once dirname(__FILE__).'/actoken.php';
 require_once dirname(__FILE__).'/db/db_mysql.class.php';
 
 
-define("TOKEN", "If985hike");
-define("APPID", "wxe9828da2665d3b63");
-define("APPSECRET","9098f1847820f42fd59b0d083761d4b1");
+define("TOKEN", "");
+define("APPID", "");
+define("APPSECRET","");
 define("ACCESS_TOKEN",returnAccessToken());
 
 class wechatCallbackapiTest
@@ -106,11 +106,11 @@ class wechatCallbackapiTest
             case "CLICK":
                 switch ($object->EventKey)
                 {
-                    case "company":
-                        $content = "公牛建站\n提供互联网相关产品与服务。\r\n详情请看<a href=\"http://passby.me/\">过客小站</a>";
+                    case "gsjj":
+                        $content = "公司简介<a href=\"http://www.jinchidai.com/\">金池贷</a>";
                         break;
-					case "笑话":
-						$content ="从前有个人，\n后来又来个人\n好笑不？";
+					case "lxwm":
+						$content ="联系我们";
 						break;
                     default:
                         $content = "点击菜单：".$object->EventKey;

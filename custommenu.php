@@ -7,53 +7,83 @@ require_once dirname(__FILE__).'/common/base.php';
 $jsonmenu = '{
       "button":[
       {
-           "name":"aaaa",
+           "name":"我要理财",
            "sub_button":[
             {
-               "type":"click",
-               "name":"谁说的",
-               "key":"天气北京"
+               "type":"view",
+               "name":"快速注册",
+               "url":"http://www.jinchidai.com/index.action?user&q=going/getreg"
+            },
+			{
+               "type":"view",
+               "name":"标情速递",
+               "url":"http://www.jinchidai.com/invest/index.html?order=account_up"
             },
             {
-               "type":"click",
-               "name":"上海天气",
-               "key":"天气上海"
+               "type":"view",
+               "name":"充值方式",
+               "url":"http://www.jinchidai.com/"
             },
             {
-               "type":"click",
-               "name":"广州天气",
-               "key":"天气广州"
-            },
-            {
-               "type":"click",
-               "name":"深圳天气",
-               "key":"天气深圳"
-            },
-            {
-                "type":"view",
-                "name":"本地天气",
-                "url":"http://m.hao123.com/a/tianqi"
+               "type":"view",
+               "name":"安全保障",
+               "url":"http://m.jinchidai.com/html/aqbz.html"
             }]
       
 
        },
        {
-           "name":"过客小站",
+           "name":"我要借款",
+           "sub_button":[
+		    {
+               "type":"view",
+               "name":"快速注册",
+               "url":"http://www.jinchidai.com/index.action?user&q=going/getreg"
+            },
+            {
+               "type":"view",
+               "name":"产品介绍",
+               "url":"http://www.jinchidai.com/borrow/index.html"
+            },
+            {
+               "type":"view",
+               "name":"借款流程",
+               "url":"http://m.jinchidai.com/html/jklc.html"
+            },
+            {
+                "type":"view",
+                "name":"借款费用",
+                "url":"http://www.jinchidai.com/"
+            }]
+       
+
+       },{
+           "name":"更多……",
            "sub_button":[
             {
-               "type":"click",
+               "type":"view",
+               "name":"快速注册",
+               "url":"http://www.jinchidai.com/index.action?user&q=going/getreg"
+            },
+            {
+               "type":"view",
+               "name":"招聘信息",
+               "url":"http://m.jinchidai.com/html/zpxx.html"
+            },
+            {
+               "type":"view",
                "name":"公司简介",
-               "key":"company"
+               "url":"http://www.jinchidai.com/"
             },
-            {
-               "type":"click",
-               "name":"趣味游戏",
-               "key":"游戏"
+			{
+               "type":"view",
+               "name":"联系我们",
+               "url":"http://www.jinchidai.com/"
             },
-            {
-                "type":"click",
-                "name":"讲个笑话",
-                "key":"笑话"
+			{
+               "type":"view",
+               "name":"平台公告",
+               "url":"http://www.jinchidai.com/gonggao/index.html"
             }]
        
 
@@ -64,7 +94,7 @@ $jsonmenu = '{
 
 $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.ACCESS_TOKEN;
 $result = https_request($url, $jsonmenu);
-//var_dump($result);
+var_dump($result);
 
 $isCustomMenuOK = json_decode($result);
 //var_dump($isCustomMenuOK);

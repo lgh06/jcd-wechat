@@ -63,7 +63,10 @@ background-color: green;
 min-height:30em;
 /*float: left;
 width: 100%;*/
+width:90%;
+margin:0 auto 0 auto;
 background-color: #856;
+box-shadow: 1px 1px 4px #cccccc;
 }
 
 .footer{
