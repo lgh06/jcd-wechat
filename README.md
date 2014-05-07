@@ -46,5 +46,12 @@ define("APPSECRET","9098f1847820f42fd59b0d083761d4b1");
 
 * 邮件(hnnk--qq.com, 把--换成@)
 * QQ: 527902958
-* weibo: [@穿越异次元](http://weibo.com/73436303)
-* [![可怜可怜我吧](https://img.alipay.com/sys/personalprod/style/mc/btn-index.png)](http://me.alipay.com/dusty)
+* weibo: [@穿越异次元](http://weibo.com/73436303)   
+   
+      
+	     
+		    
+			   
+			   
+* 支付宝账户   
+<img src="https://mobilecodec.alipay.com/show.htm?code=aphqhbjymr94b2xab4&picSize=L" width="200px" height="200px" />
