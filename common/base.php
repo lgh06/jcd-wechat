@@ -94,7 +94,7 @@ class wechatCallbackapiTest
 				."1.关于我们\n"
 				."2.了解P2P互联网金融\n"
 				."3.其它信息，请浏览电脑版网站\n"
-				."<a href=\"http://www.jinchidai.com\">jinchidai.com</a>";
+				."<a href=\"http://www.jinchidai.com\">金池e贷</a>";
                 $content .= (!empty($object->EventKey))?("\n来自二维码场景 ".str_replace("qrscene_","",$object->EventKey)):"";
                 break;
             case "unsubscribe":
@@ -107,12 +107,15 @@ class wechatCallbackapiTest
                 switch ($object->EventKey)
                 {
                     case "gsjj":
-                        $content = "公司简介<a href=\"http://www.jinchidai.com/\">金池贷</a>";
+                        $content = "金池e贷(www.jinchidai.com)是天津金池投资管理有限公司旗下全资独立品牌，成立于2012年9月。\n金池e贷作为天津本地首家专业级的网络借贷平台，本着诚信、尽责、专业的原则，主要为天津本地的个人消费贷款、小微型企业的融资提供专业化、快速、安全的服务，为创造本地就业、有效盘活民间闲置资金、解决小微型企业融资难等问题提供帮助。\n金池e贷拥有一支精通专业知识、互联网技术和政策法规的专业队伍，能为出借双方提供专业的经济信息服务咨询，能有效规避风险、规范运营，为天津本地的经济发展做出积极贡献。\n更多详情，请查看<a href=\"http://www.jinchidai.com/\">金池e贷</a>";
                         break;
 					case "lxwm":
-						$content ="联系我们";
+						$content ="P2P互联网金融为您提供融资、理财新方式。\n金池e贷竭诚为您服务。\n客服：\n022-83281721\n邮箱：\njinchidai@163.com\n招聘邮箱：\njinchihr@163.com\n更多详情，请查看<a href=\"http://www.jinchidai.com/\">金池e贷</a>";
 						break;
-                    default:
+					case "czfs":
+						$content ="充值方式:\n1.电脑线上充值(双乾支付)\n\n2.线下充值:\n账户姓名:杨魁英\n开户银行:招商银行 天津滨海分行营业厅\n卡号:6214 8526 0007 6817\n\n账户姓名:杨魁英\n开户银行:中国农业银行 天津分行 绍兴道支行\n卡号:622845 002800 5595977\n\n账户姓名:杨魁英\n开户银行:中国工商银行 天津分行 新村佳园里支行\n卡号:622202 0302079006623\n\n更多详情，请查看<a href=\"http://www.jinchidai.com/\">金池e贷</a>";
+						break;
+					default:
                         $content = "点击菜单：".$object->EventKey;
                         break;
                 }
@@ -140,7 +143,7 @@ class wechatCallbackapiTest
 			case "文本":
                 $content = "hahaha";
                 break;
-            case "图文":
+/*             case "图文":
             case "单图文":
                 $content = array();
                 $content[] = array(
@@ -178,7 +181,7 @@ class wechatCallbackapiTest
 				"MusicUrl"=>"http://121.199.4.61/music/zxmzf.mp3",
 				"HQMusicUrl"=>"http://121.199.4.61/music/zxmzf.mp3"
 				);
-                break;
+                break; */
 			default:{
 			
 				$dbc = new db_mysql($GLOBALS['db_conf']);

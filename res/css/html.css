@@ -1,0 +1,20 @@
+@charset "utf-8";
+/*移动端 静态网页 临时css*/
+
+body{
+	background-color:rgb(18, 18, 27);
+	}
+.container{
+	padding-left:5px;
+	padding-top:5px;
+	width:90%;
+	height:auto;
+	min-height:100%;
+	text-align:left;
+	margin:5px auto 8px auto;
+	background-color: white;
+	color:black;
+	box-shadow: 1px 1px 4px #cccccc;
+	border-radius:10px;
+	}
+	

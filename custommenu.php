@@ -20,9 +20,9 @@ $jsonmenu = '{
                "url":"http://www.jinchidai.com/invest/index.html?order=account_up"
             },
             {
-               "type":"view",
+               "type":"click",
                "name":"充值方式",
-               "url":"http://www.jinchidai.com/"
+               "key":"czfs"
             },
             {
                "type":"view",
@@ -53,7 +53,7 @@ $jsonmenu = '{
             {
                 "type":"view",
                 "name":"借款费用",
-                "url":"http://www.jinchidai.com/"
+                "url":"http://m.jinchidai.com/html/jkfy.html"
             }]
        
 
@@ -71,14 +71,14 @@ $jsonmenu = '{
                "url":"http://m.jinchidai.com/html/zpxx.html"
             },
             {
-               "type":"view",
+               "type":"click",
                "name":"公司简介",
-               "url":"http://www.jinchidai.com/"
+               "key":"gsjj"
             },
 			{
-               "type":"view",
+               "type":"click",
                "name":"联系我们",
-               "url":"http://www.jinchidai.com/"
+               "key":"lxwm"
             },
 			{
                "type":"view",
@@ -94,7 +94,7 @@ $jsonmenu = '{
 
 $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token='.ACCESS_TOKEN;
 $result = https_request($url, $jsonmenu);
-var_dump($result);
+//var_dump($result);
 
 $isCustomMenuOK = json_decode($result);
 //var_dump($isCustomMenuOK);
